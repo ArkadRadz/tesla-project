@@ -1,3 +1,4 @@
 # Lokalizator ładowania Tesli
-![Logo firmy](/img/logo.png =125x125)
+<img src="/img/logo.png" alt="Logo Firmy" width="125px" height="125px">
+
 Projekt
