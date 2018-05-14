@@ -1,4 +1,3 @@
-# tesla-project
-yup
-taiga testing
-testing
+# Lokalizator ładowania Tesli
+![Logo firmy](/img/logo.png)
+Projekt
