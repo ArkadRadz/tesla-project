@@ -1,4 +1,3 @@
-
     /**
      * Handles the sign in button press.
      */
