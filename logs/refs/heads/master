@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 20d1dd073ed102847fad91a5a0593102b98c0666 unknown <Arek@DESKTOP-18C0GPI.(none)> 1524791719 +0200	clone: from https://github.com/sumrabbit/tesla-project
+20d1dd073ed102847fad91a5a0593102b98c0666 ea5ac16efb85245a49785527f28fb08c5c5c47c0 unknown <arek.radziewicz@gmail.com> 1524792213 +0200	commit: added initial index file
+ea5ac16efb85245a49785527f28fb08c5c5c47c0 40cb362cfa62c3c1f0901f0e9805a5fd603e4b45 unknown <arek.radziewicz@gmail.com> 1526292975 +0200	pull -r origin master: Fast-forward
+40cb362cfa62c3c1f0901f0e9805a5fd603e4b45 44aae4101deb928ccaf98e8da4106e48ee5220d1 unknown <arek.radziewicz@gmail.com> 1526294742 +0200	commit: Przygotowanie funkcji rejestracji i logowania użytkownika
+44aae4101deb928ccaf98e8da4106e48ee5220d1 425f9bb455cc4cf6ca6d481ad2d38650e97f1422 unknown <arek.radziewicz@gmail.com> 1526294814 +0200	commit: test
+425f9bb455cc4cf6ca6d481ad2d38650e97f1422 b122a984f90434716c538dd714b5d8092d2fe593 unknown <arek.radziewicz@gmail.com> 1526295216 +0200	commit: aktualizacja spisu
+b122a984f90434716c538dd714b5d8092d2fe593 973e6771739512e036e5186228ec55a24afdd3ec unknown <arek.radziewicz@gmail.com> 1526295393 +0200	commit: aktualizacja spisu
+973e6771739512e036e5186228ec55a24afdd3ec 99778eb449439dd4c3e110ece3da9e61239f83e9 unknown <arek.radziewicz@gmail.com> 1526295531 +0200	commit: aktualizacja spisu
+99778eb449439dd4c3e110ece3da9e61239f83e9 625b04c5fff7f9e131dd216ec43e42a7908a3737 unknown <arek.radziewicz@gmail.com> 1526409609 +0200	commit: add firebase
