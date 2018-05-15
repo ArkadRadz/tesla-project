@@ -131,7 +131,7 @@
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
+          // document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
           document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
           //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           document.getElementById('userName').textContent = 'Witaj ' + firebase.auth().currentUser.email;
@@ -142,7 +142,7 @@
         } else {
           // User is signed out.
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
+          // document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
           document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
           //document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('userName').textContent = 'Nie jesteś zalogowany'
