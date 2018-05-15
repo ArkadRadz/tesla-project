@@ -133,7 +133,7 @@
           // [START_EXCLUDE]
           // document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           // document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           document.getElementById('userName').textContent = 'Hello ' + firebase.auth().currentUser.email;
           if (!emailVerified) {
             // document.getElementById('quickstart-verify-email').disabled = false;
@@ -144,7 +144,7 @@
           // [START_EXCLUDE]
           // document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           // document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          document.getElementById('quickstart-account-details').textContent = 'null';
+          // document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
@@ -154,7 +154,7 @@
       // [END authstatelistener]
 
       // document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+      // document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
       // document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
       // document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
     }
