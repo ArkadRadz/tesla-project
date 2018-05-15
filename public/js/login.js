@@ -131,17 +131,10 @@
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-<<<<<<< HEAD
           document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
           document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           document.getElementById('userName').textContent = 'Witaj ' + firebase.auth().currentUser.email;
-=======
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          document.getElementById('userName').textContent = 'Hello ' + firebase.auth().currentUser.email;
->>>>>>> 26c8782cbe3ef4d10e624455694a5b869286db3d
           if (!emailVerified) {
             // document.getElementById('quickstart-verify-email').disabled = false;
           }
@@ -149,16 +142,10 @@
         } else {
           // User is signed out.
           // [START_EXCLUDE]
-<<<<<<< HEAD
           document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
           document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
-          document.getElementById('quickstart-account-details').textContent = 'null';
+          //document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('userName').textContent = 'Nie jesteś zalogowany'
-=======
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          // document.getElementById('quickstart-account-details').textContent = 'null';
->>>>>>> 26c8782cbe3ef4d10e624455694a5b869286db3d
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
