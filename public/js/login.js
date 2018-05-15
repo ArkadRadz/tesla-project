@@ -134,6 +134,7 @@
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          document.getElementById('userName').textContent = 'Hello + ' + email;
           if (!emailVerified) {
             // document.getElementById('quickstart-verify-email').disabled = false;
           }
