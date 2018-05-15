@@ -11,11 +11,11 @@
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         if (email.length < 4) {
-          alert('Please enter an email address.');
+          alert('Podaj adres email dłuższy niż 4 znaki.');
           return;
         }
         if (password.length < 4) {
-          alert('Please enter a password.');
+          alert('Podaj hasło dłuższe niż 4 znaki.');
           return;
         }
         // Sign in with email and pass.
@@ -26,7 +26,7 @@
           var errorMessage = error.message;
           // [START_EXCLUDE]
           if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
+            alert('Nieprawidłowe hasło.');
           } else {
             alert(errorMessage);
           }
@@ -46,11 +46,11 @@
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       if (email.length < 4) {
-        alert('Please enter an email address.');
+        alert('Podaj adres email dłuższy niż 4 znaki.');
         return;
       }
       if (password.length < 4) {
-        alert('Please enter a password.');
+        alert('Podaj hasło dłuższe niż 4 znaki.');
         return;
       }
       // Sign in with email and pass.
@@ -61,7 +61,7 @@
         var errorMessage = error.message;
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
+          alert('Nie wystarczająco silne hasło.');
         } else {
           alert(errorMessage);
         }
@@ -131,10 +131,10 @@
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
+          document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          document.getElementById('userName').textContent = 'Hello ' + firebase.auth().currentUser.email;
+          document.getElementById('userName').textContent = 'Witaj ' + firebase.auth().currentUser.email;
           if (!emailVerified) {
             // document.getElementById('quickstart-verify-email').disabled = false;
           }
@@ -142,9 +142,10 @@
         } else {
           // User is signed out.
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          document.getElementById('quickstart-sign-in-status').textContent = 'Zalogowany';
+          document.getElementById('quickstart-sign-in').textContent = 'Wyloguj';
           document.getElementById('quickstart-account-details').textContent = 'null';
+          document.getElementById('userName').textContent = 'Nie jesteś zalogowany'
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
