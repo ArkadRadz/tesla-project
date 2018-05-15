@@ -139,6 +139,7 @@
 =======
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           document.getElementById('userName').textContent = 'Hello ' + firebase.auth().currentUser.email;
 >>>>>>> 26c8782cbe3ef4d10e624455694a5b869286db3d
           if (!emailVerified) {
@@ -156,6 +157,7 @@
 =======
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          // document.getElementById('quickstart-account-details').textContent = 'null';
 >>>>>>> 26c8782cbe3ef4d10e624455694a5b869286db3d
           // [END_EXCLUDE]
         }
