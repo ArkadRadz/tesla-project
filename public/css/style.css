@@ -11,7 +11,9 @@ body{
 	padding: 10px;
 	margin: 10px;
 }
-
+.content-bg img{
+	background-color: rgba(255,255,255,0.2);
+}
 
 .log-window{
 	width: 500px;
