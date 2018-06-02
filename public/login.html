@@ -11,20 +11,13 @@
 		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-		<script type="text/javascript">
-		// Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyB2p2rvi_QnSYANTmfSRIQnaQDJVhZVJLQ",
-		    authDomain: "tesla-projekt.firebaseapp.com",
-		    databaseURL: "https://tesla-projekt.firebaseio.com",
-		    projectId: "tesla-projekt",
-		    storageBucket: "tesla-projekt.appspot.com",
-		    messagingSenderId: "243974502932"
-		  };
-		  firebase.initializeApp(config);
-		</script>
-		<script src="js/login.js"></script>
+		<script src="js/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
+		<script src="js/newlogin.js"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -32,10 +25,13 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<span class="navbar-brand mb-0 h1">
 				<i class="fab fa-searchengin fa-lg"></i>
-				YouCharge
+				<span>YouCharge</span>
 			</span>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">Strona Główna<span class="sr-only">(current)</span></a>
 					</li>
@@ -43,12 +39,11 @@
 						<a class="nav-link" href="login.html">Logowanie</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="register.html">Rejestracja</a>
+						<span id="userName" class="navbar-text">
+						<i class="fas fa-sync fa-spin"></i>
+						</span>
 					</li>
 				</ul>
-				<span id="userName" class="navbar-text">
-				<i class="fas fa-sync fa-spin"></i>
-				</span>
 			</div>
 		</nav>
 		<div class="container">
@@ -56,20 +51,8 @@
 				<div class="log-window">
 					<div class="content-bg">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Adres email</label>
-							<input class="form-control" type="text" id="email" name="email" placeholder="Wpisz adres email" aria-describedby="emailHelp"/>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Hasło</label>
-							<input type="password" class="form-control" id="password" placeholder="Wpisz hasło" name="password">
-						</div>
-						<button id="quickstart-sign-in" name="signin" class="btn btn-primary">Zaloguj</button>
-          <!-- Container where we'll display the user details -->
-<!--           <div class="quickstart-user-details-container">
-            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
-            <pre><code id="quickstart-account-details">null</code></pre>
-          </div> -->
+							<div id="firebaseui-auth-container"></div>
+							<div id="loader">Ładowanie...</div>
 					</div>
 				</div>
 			</main>
