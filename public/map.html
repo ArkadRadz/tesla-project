@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Strona główna</title>
+		<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+		<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
+		<!-- <link rel="stylesheet" href="main.css"> -->
+		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+		<script src="js/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
+		<script src="js/home.js"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+		#map {
+		  height: 400px;  /* The height is 400 pixels */
+		  width: 100%;  /* The width is the width of the web page */
+		 }
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<span class="navbar-brand mb-0 h1">
+				<i class="fab fa-searchengin fa-lg"></i>
+				<span>YouCharge</span>
+			</span>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Strona Główna<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html" id="logowanie">Logowanie</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="map.html" id="mapa">Mapa</a>
+					</li>
+					<li class="nav-item">
+						<span id="userName" class="navbar-text">
+						<i class="fas fa-sync fa-spin"></i>
+						</span>
+					</li>
+					<li class="nav-item">
+						<button class="btn" id="wyloguj">Wyloguj</button>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row content-bg">
+					<!--The div element for the map -->
+					<div id="map"></div>
+					<!-- Replace the value of the key parameter with your own API key. -->
+					<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Cc5umVs-BPCEitNbM0F3CumzrsLL5f8&callback=initMap">
+					</script>
+			</div>
+		</div>
+		<script>
+		// Initialize and add the map
+		function initMap() {
+		  // The location of Uluru
+		  var uluru = {lat: 50.654127, lng: 17.905033};
+		  // The map, centered at Uluru
+		  var map = new google.maps.Map(
+			  document.getElementById('map'), {zoom: 15, center: uluru});
+		  // The marker, positioned at Uluru
+		  var marker = new google.maps.Marker({position: uluru, map: map});
+		}
+		</script>
+	</body>
+</html>
