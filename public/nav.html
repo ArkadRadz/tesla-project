@@ -1,0 +1,55 @@
+
+<!-- jeden navbar na wszystkich podstronach -->
+
+<script>
+	$(document).ready(function () {
+		var page = window.location.pathname;
+		page = page.replace("/", "");
+		// alert(page);
+		currentLinks = document.querySelectorAll('a[href="' + page + '"]');
+		currentLinks.forEach(
+			function (link) {
+				link.parentNode.className += ' active';
+			}
+		);
+	});
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<span class="navbar-brand mb-0 h1">
+		<i class="fab fa-searchengin fa-lg"></i>
+		<span>YouCharge</span>
+	</span>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+	 aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Strona Główna
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="map.html" id="mapa">Mapa</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="login.html" id="logowanie">Logowanie</a>
+			</li>
+			<li class="nav-item dropdown" id="dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span id="userName">
+						<i class="fas fa-sync fa-spin"></i>
+					</span>
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Action</a>
+					<a class="dropdown-item" href="#">Another action</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" id="wyloguj">Wyloguj</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
