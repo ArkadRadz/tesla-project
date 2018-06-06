@@ -5,18 +5,54 @@ body{
 	background-size: cover;
 	background-position: center;
 }
-.content-bg{
-	background-color: rgba(0,0,0,0.2);
-	color: white;
-	padding: 10px;
-	margin: 10px;
-}
-.content-bg img{
-	background-color: rgba(255,255,255,0.2);
+
+.container{
+	margin-top: 10px;
 }
 
-.log-window{
-	/*width: 500px;*/
-	/*background-color: gray;*/
+.jumbotron{
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	border-radius: 0px;
+}
+
+.jumbotron img{
+	display: inline-block;
 	margin: 0px auto;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.jumbotron hr{
+	border-color: white;
+}
+
+.jumbotron .btn{
+	padding: 15px;
+	border-radius: 0px;
+	border-width: 0px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.jumbotron .btn:hover{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tile-bg{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login-box{
+	margin: 0px auto;
+	width: 300px;
+}
+
+.map-box{
+	/* width: 50px; */
+	padding: 10px;
+	/* height: 300px; */
+}
+.map-box #map{
+	height: 600px;
 }

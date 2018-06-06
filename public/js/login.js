@@ -36,18 +36,19 @@ var uiConfig = {
     tosUrl: '<your-tos-url>'
 };
 
-var handleSignedInUser = function(user) {
-    document.getElementById('userName').style.display = "inline-block";
-    document.getElementById('userName').textContent = "Witaj " + firebase.auth().currentUser.email;
-};
+// home.js teraz zajmuje się handlowaniem zalogowanego usera dla każdej podstrony.
+// var handleSignedInUser = function(user) {
+//     document.getElementById('userName').style.display = "inline-block";
+//     document.getElementById('userName').textContent = "Witaj " + firebase.auth().currentUser.email;
+// };
 
-var handleSignedOutUser = function() {
-    document.getElementById('userName').style.display = 'none';
-};
+// var handleSignedOutUser = function() {
+//     document.getElementById('userName').style.display = 'none';
+// };
 
-firebase.auth().onAuthStateChanged(function(user) {
-    user ? handleSignedInUser(user) : handleSignedOutUser();
-});
+// firebase.auth().onAuthStateChanged(function(user) {
+//     user ? handleSignedInUser(user) : handleSignedOutUser();
+// });
 
 var initApp = function() {
 // The start method will wait until the DOM is loaded.

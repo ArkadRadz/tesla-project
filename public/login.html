@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset=utf-8 />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Zaloguj się do swojego konta</title>
-		<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
-		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-		<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
-		<!-- <link rel="stylesheet" href="main.css"> -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
-		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="js/init.js"></script>
-		<script src="js/login.js"></script>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<span class="navbar-brand mb-0 h1">
-				<i class="fab fa-searchengin fa-lg"></i>
-				<span>YouCharge</span>
-			</span>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Strona Główna<span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="login.html">Logowanie</a>
-					</li>
-					<li class="nav-item">
-						<span id="userName" class="navbar-text">
-						<i class="fas fa-sync fa-spin"></i>
-						</span>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<div class="container">
-			<main>
-				<div class="log-window">
-					<div class="content-bg">
-						<div class="form-group">
-							<div id="firebaseui-auth-container"></div>
-							<div id="loader">Ładowanie...</div>
-					</div>
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zaloguj się do swojego konta</title>
+	<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="main.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/init.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/home.js"></script>
+
+	<!-- skrypt do wczytywania navabara -->
+	<script>
+		$.get("nav.html", function (data) {
+			$("#nav-placeholder").replaceWith(data);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="nav-placeholder"></div>
+	<!-- skrypt podmienia ten tag na navabar -->
+	<div class="container">
+		<main>
+			<div class="login-box tile-bg">
+				<div class="form-group">
+					<div id="firebaseui-auth-container"></div>
+					<div id="loader">Ładowanie...</div>
 				</div>
-			</main>
-		</div>
-	</body>
+			</div>
+		</main>
+	</div>
+</body>
+
 </html>
