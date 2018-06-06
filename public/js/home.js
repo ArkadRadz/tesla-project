@@ -2,7 +2,6 @@ var handleSignedInUser = function(user) {
     document.getElementById('userName').style.display = "inline-block";
     document.getElementById('userName').textContent = firebase.auth().currentUser.email;
 	document.getElementById('logowanie').style.display = 'none';
-    // document.getElementById('wyloguj').style.display = "inline-block"; // znika cały dropdown więc nie ma sensu ukrywć pojedyczego butona
 	document.getElementById('mapa').style.display = "inline-block";
 	document.getElementById('dropdown').style.display = "initial";
 };
@@ -10,9 +9,9 @@ var handleSignedInUser = function(user) {
 var handleSignedOutUser = function() {
     document.getElementById('userName').style.display = 'none';
 	document.getElementById('logowanie').style.display = "inline-block";
-    // document.getElementById('wyloguj').style.display = 'none';
 	document.getElementById('mapa').style.display = "none";
 	document.getElementById('dropdown').style.display = "none";
+
 };
 
 firebase.auth().onAuthStateChanged(function(user) {
