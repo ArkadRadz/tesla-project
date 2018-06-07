@@ -19,9 +19,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 var initApp = function() {
-    document.getElementById('wyloguj').addEventListener('click', function() {
-        firebase.auth().signOut();
-    });
+	log = document.getElementById('wyloguj');
+	if (log == null) {
+		return;
+	}
+	log.addEventListener('click', function() {
+		firebase.auth().signOut();
+		window.location.replace("index.html");
+	});
 }
 
 window.addEventListener('load', initApp);
