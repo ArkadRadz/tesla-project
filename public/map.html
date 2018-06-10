@@ -3,7 +3,7 @@
 	<head>
 		<meta charset=utf-8 />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Strona główna</title>
+		<title>Mapa</title>
 		<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
 		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 		<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
@@ -14,14 +14,15 @@
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
-
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="js/init.js"></script>
 		<script src="js/home.js"></script>
+		<script src="js/map.js"></script>
 		<script>
 			$.get("nav.html", function (data) {
 				$("#nav-placeholder").replaceWith(data);
@@ -42,13 +43,5 @@
 				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Cc5umVs-BPCEitNbM0F3CumzrsLL5f8&callback=initMap"></script>
 			</div>
 		</div>
-		<script>
-			function initMap() {
-			var uluru = {lat: 50.654127, lng: 17.905033};
-			var map = new google.maps.Map(
-				document.getElementById('map'), {zoom: 15, center: uluru});
-			var marker = new google.maps.Marker({position: uluru, map: map});
-			}
-		</script>
 	</body>
 </html>
