@@ -1,31 +1,40 @@
-[debug] [2018-06-10T00:30:59.415Z] ----------------------------------------------------------------------
-[debug] [2018-06-10T00:30:59.418Z] Command:       E:\nodejs\node.exe C:\Users\Arek\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-06-10T00:30:59.418Z] CLI Version:   3.18.4
-[debug] [2018-06-10T00:30:59.418Z] Platform:      win32
-[debug] [2018-06-10T00:30:59.418Z] Node Version:  v9.11.1
-[debug] [2018-06-10T00:30:59.418Z] Time:          Sun Jun 10 2018 02:30:59 GMT+0200 (Środkowoeuropejski czas letni)
-[debug] [2018-06-10T00:30:59.418Z] ----------------------------------------------------------------------
+[debug] [2018-06-10T00:57:04.758Z] ----------------------------------------------------------------------
+[debug] [2018-06-10T00:57:04.760Z] Command:       E:\nodejs\node.exe C:\Users\Arek\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-06-10T00:57:04.761Z] CLI Version:   3.18.4
+[debug] [2018-06-10T00:57:04.761Z] Platform:      win32
+[debug] [2018-06-10T00:57:04.761Z] Node Version:  v9.11.1
+[debug] [2018-06-10T00:57:04.761Z] Time:          Sun Jun 10 2018 02:57:04 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:04.761Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-06-10T00:30:59.487Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-06-10T00:30:59.487Z] > authorizing via signed-in user
-[debug] [2018-06-10T00:30:59.490Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-06-10T00:30:59.490Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/YiUFfd7XMv7OCHnRK6JmaN4wOvHZ51BSM7Ew1V8IRxM',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sun Jun 10 2018 02:30:59 GMT+0200 (Środkowoeuropejski czas letni)
-[debug] [2018-06-10T00:30:59.833Z] <<< HTTP RESPONSE 200
-[debug] [2018-06-10T00:30:59.939Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tesla-projekt  
+[debug] [2018-06-10T00:57:04.771Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-10T00:57:04.771Z] > authorizing via signed-in user
+[debug] [2018-06-10T00:57:04.773Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tesla-projekt  
   
- Sun Jun 10 2018 02:30:59 GMT+0200 (Środkowoeuropejski czas letni)
-[debug] [2018-06-10T00:31:00.924Z] <<< HTTP RESPONSE 200
-[debug] [2018-06-10T00:31:00.925Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tesla-projekt/tokens  
+ Sun Jun 10 2018 02:57:04 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:05.738Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-10T00:57:05.739Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tesla-projekt/tokens  
   
- Sun Jun 10 2018 02:31:00 GMT+0200 (Środkowoeuropejski czas letni)
-[debug] [2018-06-10T00:31:01.804Z] <<< HTTP RESPONSE 200
-[debug] [2018-06-10T00:31:01.805Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tesla-projekt  
+ Sun Jun 10 2018 02:57:05 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:06.395Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-10T00:57:06.396Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tesla-projekt  
   
- Sun Jun 10 2018 02:31:01 GMT+0200 (Środkowoeuropejski czas letni)
-[debug] [2018-06-10T00:31:02.842Z] <<< HTTP RESPONSE 200
+ Sun Jun 10 2018 02:57:06 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:07.429Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Arek\tesla-project'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-06-10T00:57:16.685Z] Fetching environment
+[debug] [2018-06-10T00:57:16.693Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/243974502932:getServerAppConfig  
+  
+ Sun Jun 10 2018 02:57:16 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:16.693Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/243974502932/clients/_:getWebAppConfig  
+  
+ Sun Jun 10 2018 02:57:16 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2018-06-10T00:57:17.296Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-10T00:57:17.297Z] Starting @google-cloud/functions-emulator
+[debug] [2018-06-10T00:57:17.345Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-06-10T00:57:23.701Z] Parsing function triggers
