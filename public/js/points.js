@@ -20,6 +20,7 @@ function initDB() {
 				var cell = row.insertCell(0);
 				cell.innerHTML = 'Długość geograficzna: ' + objVal.lat;
 				cell.innerHTML += '<br>Szerokość geograficzna: ' + objVal.lng;
+				cell.innerHTML += '<br>Nazwa: <b>' + objVal.name + "</b>";
 			}
 		})
 
