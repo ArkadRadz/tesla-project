@@ -16,14 +16,7 @@ function initDB(mapRef) {
 	var ref = firebase.database().ref();
 	ref.on('value',function(snap) {
 		markersArray = snap.val().chargingPoints;
-		
-		snap.forEach(function(childSnapshot) {
-			var key = childSnapshot.key;
-			var childData = childSnapshot.val();
-			globalValue = childData;
-			console.log(childData);
-		  });
-		
+
 		markersArray.forEach(markerElement => {
 			// console.log(markerElement);
 			var newMarker = new google.maps.Marker({
