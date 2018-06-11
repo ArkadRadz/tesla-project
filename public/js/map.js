@@ -17,13 +17,16 @@ function initDB(mapRef) {
 	ref.on('value',function(snap) {
 		markersArray = snap.val().chargingPoints;
 
-		markersArray.forEach(markerElement => {
-			// console.log(markerElement);
-			var newMarker = new google.maps.Marker({
-				 position: markerElement,
-			 });
-			 newMarker.setMap(mapRef);
-		 });
+		Object.keys(markersArray).map(keyName => {
+			var objVal = markersArray[keyName];
+			// console.log(objVal)
+			newMarker = new google.maps.Marker({
+				position: objVal,
+			});
+			newMarker.setMap(mapRef);
+		})
+
+
 	},function(error) {
 		console.log("Error: " + error.code)
 	});

@@ -30,7 +30,6 @@ function initDB(mapRef) {
 				position: objVal,
 			});
 			newMarker.setMap(mapRef);
-
 		})
 
 		// markersArray.forEach(markerElement => {
