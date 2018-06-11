@@ -10,45 +10,28 @@ function initMap() {
 	});
 	marker.setMap(map);
 	initDB(map);
-    var geocoder = new google.maps.Geocoder();
-    document.getElementById('submit').addEventListener('click', function() {
-        geocodeAddress(geocoder, map);
-    });
 }
 function initDB(mapRef) {
+	var markersArray;
 	var ref = firebase.database().ref();
 	ref.on('value',function(snap) {
 		markersArray = snap.val().chargingPoints;
+		
+		snap.forEach(function(childSnapshot) {
+			var key = childSnapshot.key;
+			var childData = childSnapshot.val();
+			globalValue = childData;
+			console.log(childData);
+		  });
+		
 		markersArray.forEach(markerElement => {
 			// console.log(markerElement);
 			var newMarker = new google.maps.Marker({
-				position: markerElement,
-			});
-			newMarker.setMap(mapRef);
-		});
+				 position: markerElement,
+			 });
+			 newMarker.setMap(mapRef);
+		 });
 	},function(error) {
 		console.log("Error: " + error.code)
 	});
-}
-function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('address').value;
-    geocoder.geocode({'address': address}, function(results, status) {
-        if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            console.log(results[0].geometry.location);
-            var infowindow = new google.maps.InfoWindow({
-                content: "<a href=''>Testing</a>"
-            });
-
-            var marker = new google.maps.Marker({
-                map: resultsMap,
-                position: results[0].geometry.location
-            });
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
 }
