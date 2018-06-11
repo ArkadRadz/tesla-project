@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset=utf-8 />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Mapa</title>
-		<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
-		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-		<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
-		<!-- <link rel="stylesheet" href="main.css"> -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
-		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="js/init.js"></script>
-		<script src="js/home.js"></script>
-		<script src="js/addmap.js"></script>
-		<script>
-			$.get("nav.html", function (data) {
-				$("#nav-placeholder").replaceWith(data);
-			});
-		</script>
-		<style>
+
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mapa</title>
+	<!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="main.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth.css" />
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/ui/3.0.0/firebase-ui-auth__pl.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/init.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/addmap.js"></script>
+	<script>
+		$.get("nav.html", function (data) {
+			$("#nav-placeholder").replaceWith(data);
+		});
+	</script>
+	<style>
 		#map {
-		  height: 400px;  /* The height is 400 pixels */
-		  width: 100%;  /* The width is the width of the web page */
-		 }
-		</style>
-	</head>
-	<body>
-		<div id="nav-placeholder"></div>
-		<div class="container">
-			<div class="map-box tile-bg">
-				<div id="map"></div>
+			height: 400px;
+			/* The height is 400 pixels */
+			width: 100%;
+			/* The width is the width of the web page */
+		}
+	</style>
+</head>
+
+<body>
+	<div id="nav-placeholder"></div>
+	<div class="container">
+		<div class="map-box tile-bg">
+			<div id="map"></div>
+			<form>
 				<input id="address" type="textbox" value="">
-				<input id="submit" type="button" value="Geocode">
-				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Cc5umVs-BPCEitNbM0F3CumzrsLL5f8&callback=initMap"></script>
-			</div>
+				<input id="submit" type="submit" value="Geocode">
+			</form>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Cc5umVs-BPCEitNbM0F3CumzrsLL5f8&callback=initMap"></script>
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>

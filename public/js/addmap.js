@@ -9,63 +9,80 @@ function initMap() {
 		position: myLatLng,
 	});
 	marker.setMap(map);
-	// initDB(map);
-    var geocoder = new google.maps.Geocoder();
-    document.getElementById('submit').addEventListener('click', function() {
-        geocodeAddress(geocoder, map);
-    });
-}
-// function initDB(mapRef) {
-	// var ref = firebase.database().ref();
-	// ref.on('value',function(snap) {
-		// markersArray = snap.val().chargingPoints;
-		// markersArray.forEach(markerElement => {
-			// // console.log(markerElement);
-			// var newMarker = new google.maps.Marker({
-				// position: markerElement,
-			// });
-			// newMarker.setMap(mapRef);
-		// });
-	// },function(error) {
-		// console.log("Error: " + error.code)
-	// });
-// }
-function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('address').value;
-	var dbref = firebase.database().ref('/chargingPoints');
-    geocoder.geocode({'address': address}, function(results, status) {
-        if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var infowindow = new google.maps.InfoWindow({
-                content: "<a href=''>Testing</a>"
-            });
+	initDB(map);
 
-            var marker = new google.maps.Marker({
-                map: resultsMap,
-                position: results[0].geometry.location
-            });
-			// dbref.push.set({
-				// 'id_uslugodawcy': firebase.auth().currentUser.uid,
-				// 'lat': results[0].geometry.location.lat(),
-				// 'lng': results[0].geometry.location.lng()
-			// });
-			var dblength;
-			dbref.on("value", function(snapshot) {
-				dblength = snapshot.numChildren();
-			})
-			var dbref2 = firebase.database().ref('/chargingPoints/' + dblength);
-			dbref2.set({
-				'id_uslugodawcy': firebase.auth().currentUser.uid,
-				'lat': results[0].geometry.location.lat(),
-				'lng': results[0].geometry.location.lng()
+	var geocoder = new google.maps.Geocoder();
+	document.getElementById('submit').addEventListener('click', function () {
+		geocodeAddress(geocoder, map);
+	});
+}
+
+// this only shows markers on map
+function initDB(mapRef) {
+	var ref = firebase.database().ref();
+	ref.on('value', function (snap) {
+		markersArray = snap.val().chargingPoints;
+
+		Object.keys(markersArray).map(keyName => {
+			var objVal = markersArray[keyName];
+			// console.log(objVal)
+			newMarker = new google.maps.Marker({
+				position: objVal,
 			});
-			console.log(results[0].geometry.location.lat());
-			console.log(results[0].geometry.location.lng());
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
+			newMarker.setMap(mapRef);
+
+		})
+
+		// markersArray.forEach(markerElement => {
+		// 	// console.log(markerElement);
+		// 	var newMarker = new google.maps.Marker({
+		// 		position: markerElement,
+		// 	});
+		// 	newMarker.setMap(mapRef);
+		// });
+
+
+	}, function (error) {
+		console.error("Error: " + error.code)
+	});
+}
+function geocodeAddress(geocoder, resultsMap) {
+	var address = document.getElementById('address').value;
+	var loc = { 'address': address };
+	geocoder.geocode(loc, function (results, status) {
+		if (status === 'OK') {
+
+			var pos = results[0].geometry.location;
+
+			resultsMap.setCenter(pos);
+			new google.maps.Marker({
+				map: resultsMap,
+				position: pos
+			});
+
+
+			var UID = firebase.auth().currentUser.uid;
+
+			console.log(UID)
+
+			var ref = firebase.database().ref("/chargingPoints");
+			// console.log(ref);
+
+			var point = {
+				id_uslugodawcy: UID,
+				lat: pos.lat(),
+				lng: pos.lng(),
+				name: address
+			};
+
+			// console.log(point);
+
+
+			ref.push().set(point, function (error) {
+				console.error("Error: " + error.code);
+			})
+		} else {
+			alert('Geocode was not successful for the following reason: ' + status);
+		}
+	});
 }
