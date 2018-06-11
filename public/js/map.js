@@ -5,29 +5,9 @@ function initMap() {
 		zoom: 4,
 		center: myLatLng
 	});
-	var marker = new google.maps.Marker({
-		position: myLatLng,
-	});
-	marker.setMap(map);
-	initDB(map);
-}
-function initDB(mapRef) {
-	var markersArray;
-	var ref = firebase.database().ref();
-	ref.on('value',function(snap) {
-		markersArray = snap.val().chargingPoints;
-
-		Object.keys(markersArray).map(keyName => {
-			var objVal = markersArray[keyName];
-			// console.log(objVal)
-			newMarker = new google.maps.Marker({
-				position: objVal,
-			});
-			newMarker.setMap(mapRef);
-		})
-
-
-	},function(error) {
-		console.log("Error: " + error.code)
-	});
+	// var marker = new google.maps.Marker({
+	// 	position: myLatLng,
+	// });
+	// marker.setMap(map);
+	initDB(map); // now in showMarkers.js
 }

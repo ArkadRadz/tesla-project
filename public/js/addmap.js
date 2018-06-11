@@ -5,44 +5,15 @@ function initMap() {
 		zoom: 4,
 		center: myLatLng
 	});
-	var marker = new google.maps.Marker({
-		position: myLatLng,
-	});
-	marker.setMap(map);
+	// var marker = new google.maps.Marker({
+	// 	position: myLatLng,
+	// });
+	// marker.setMap(map);
 	initDB(map);
 
 	var geocoder = new google.maps.Geocoder();
 	document.getElementById('submit').addEventListener('click', function () {
 		geocodeAddress(geocoder, map);
-	});
-}
-
-// this only shows markers on map
-function initDB(mapRef) {
-	var ref = firebase.database().ref();
-	ref.on('value', function (snap) {
-		markersArray = snap.val().chargingPoints;
-
-		Object.keys(markersArray).map(keyName => {
-			var objVal = markersArray[keyName];
-			// console.log(objVal)
-			newMarker = new google.maps.Marker({
-				position: objVal,
-			});
-			newMarker.setMap(mapRef);
-		})
-
-		// markersArray.forEach(markerElement => {
-		// 	// console.log(markerElement);
-		// 	var newMarker = new google.maps.Marker({
-		// 		position: markerElement,
-		// 	});
-		// 	newMarker.setMap(mapRef);
-		// });
-
-
-	}, function (error) {
-		console.error("Error: " + error.code)
 	});
 }
 function geocodeAddress(geocoder, resultsMap) {
