@@ -7,14 +7,14 @@ function initDB() {
 	//console.log(firebase.database());
 	//console.log(ref);
 	ref.once('value', function (snap) {
-		console.log('xd');
+		// console.log('xd');
 		markersArray = snap.val().chargingPoints;
 		var table = document.getElementById('table');
 
 
 		Object.keys(markersArray).map(keyName => {
 			var objVal = markersArray[keyName];
-			console.log(objVal)
+			// console.log(objVal)
 			if (firebase.auth().currentUser.uid == objVal.id_uslugodawcy) {
 				var row = table.insertRow(0);
 				var cell = row.insertCell(0);
