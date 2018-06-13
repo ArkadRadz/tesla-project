@@ -1,4 +1,7 @@
 function initDB(mapRef) {
+	var directionsService = new google.maps.DirectionsService;
+	var directionsDisplay = new google.maps.DirectionsRenderer;
+	directionsDisplay.setMap(mapRef);
 	var ref = firebase.database().ref();
 	ref.on('value', function (snap) {
 		var markersArray = snap.val().chargingPoints;
@@ -12,8 +15,14 @@ function initDB(mapRef) {
 				content: objVal.name
 			});
 			newMarker.setMap(mapRef);
-			newMarker.addListener('click', function () {
+			newMarker.addListener('mouseover', function () {
 				infowindow.open(mapRef, newMarker);
+			});
+			newMarker.addListener('mouseout', function () {
+				infowindow.close();
+			});
+			newMarker.addListener('click', function () {
+				showRoute(objVal, directionsService, directionsDisplay)
 			});
 		})
 	}, function (error) {
